@@ -53,6 +53,7 @@ proyecto-final/ enunciado y rúbrica
 | **11** | **24 ago** | **PL/SQL sobre Oracle · fila por fila es lento por lento** | **Oracle** | [clase](clases/11-plsql-oracle/) |
 | **12** | **25 ago** | **Datos que llegan de afuera · staging, `LOG ERRORS` y `MERGE`** | **Oracle** | [clase](clases/12-carga-externa/) |
 | **13** | **26 ago** | **Oracle en tu máquina y Power BI conectado** | **Oracle local + Power BI** | [clase](clases/13-oracle-local-powerbi/) |
+| **14** | **28 ago** | **Del reporte plano al modelo dimensional · hechos, dimensiones y la estrella** | **Oracle local + Power BI** | [clase](clases/14-modelo-dimensional/) |
 
 ---
 
@@ -66,15 +67,15 @@ Desde la 12, el motor deja de ser la novedad y pasa a ser la herramienta: lo que
 
 Y en la 13 el curso sale del navegador: **Oracle se instala en la máquina de cada quien** y Power BI se conecta a él. No por gusto de instalar cosas, sino porque un servicio de navegador no expone un puerto, y una herramienta de BI no lee pantallas: se conecta a un servidor. La idea de esa clase es la que ordena todo lo que sigue: **un tablero no se conecta a una base, se conecta a lo que la base le deja ver.**
 
-> **Nota de idioma:** el material de la clase 13 en adelante está redactado en español de México. Las clases 1 a 12 conservan la redacción original.
+Y en la 14 se le da forma a lo que la 13 conectó. Ayer el tablero leyó **una vista plana**; hoy lee **un modelo**: los kilos en una tabla de hechos, la finca, el cultivo y la fecha en tablas de dimensión. Eso se llama **estrella**, y trae consigo el error más silencioso del curso: un calendario que no cubre marzo hace que el tablero diga **19 750** en vez de 30 550, con las nueve cosechas cargadas y sin un solo mensaje de error.
 
-Lo que sigue después: **Power BI** conectado a esta misma base, que es la capa de arriba. El motor primero, el tablero después.
+> **Nota de idioma:** el material de la clase 13 en adelante está redactado en español de México. Las clases 1 a 12 conservan la redacción original.
 
 ---
 
 ## El hilo del curso
 
-Si hay una sola cosa que llevarse de las trece clases, es esta:
+Si hay una sola cosa que llevarse de las catorce clases, es esta:
 
 **Los errores que dan error son los baratos.**
 
@@ -88,6 +89,7 @@ Si hay una sola cosa que llevarse de las trece clases, es esta:
 | 11 | dos `INSERT` que fallaron adentro de un `WHEN OTHERS THEN NULL` | nada |
 | 12 | una carga que terminó «bien» con ocho filas rechazadas | nada |
 | 13 | un tablero en modo Importar mostrando los datos de la semana pasada | nada |
+| 14 | una dimensión de tiempo que no cubría marzo, y 10 800 kilos que se evaporaron | nada |
 
 ---
 

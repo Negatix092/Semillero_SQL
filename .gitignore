@@ -61,6 +61,20 @@ CLAUDE.md
 #     cambios de esquema, el script del dia siguiente los declara
 #     vacios y los vuelve a pedir. Cuesta una linea de comentario en
 #     el script y ahorra la discusion de si se publica o no.
+#
+# (la clase 13 no tuvo script propio: reuso el de la clase 12 tal cual,
+#  porque la novedad de ese dia no estaba en los datos sino en donde corren)
+#
+#datos/agrodb_oracle_clase14.sql <- publicado el 28/08 (con la clase 14).
+#   NO contesta NADA del ejercicio 13: no trae v_bi_produccion y ademas la
+#   BORRA en la limpieza si quedo de ayer. Tampoco trae ninguna tabla dim_
+#   ni h_, que son el ejercicio de hoy, ni una linea de pista de como se
+#   construyen.
+#   Trae DOCE numeros de control, no trece: staging_lecturas, err_lecturas
+#   y seq_lecturas eran el tema de la clase 12 y hoy no se usan.
+#   Primera vez que la REGLA 6 cae sobre un ejercicio que dejo una VISTA y
+#   no tablas. Se resuelve igual: se borra y se vuelve a pedir en la parte
+#   A del ejercicio, con el enunciado escrito en el propio script.
 
 # =====================================================================
 # BORRADORES Y TRABAJO EN CURSO
