@@ -5,7 +5,7 @@ Todo el material del curso está aquí: diapositivas, scripts, ejercicios y entr
 
 **Diapositivas online:** https://negatix092.github.io/Semillero_SQL/
 **Notas y correcciones:** https://negatix092.github.io/Semillero_SQL/resultados.html
-**Entorno de trabajo:** [sqliteonline.com](https://sqliteonline.com) (SQLite, clases 1 a 10) · [freesql.com](https://freesql.com) (Oracle, desde la clase 11) · Oracle local + Power BI (desde la clase 13) · Power BI sobre CSV, sin motor (clases 15 a 26)
+**Entorno de trabajo:** [sqliteonline.com](https://sqliteonline.com) (SQLite, clases 1 a 10) · [freesql.com](https://freesql.com) (Oracle, desde la clase 11) · Oracle local + Power BI (desde la clase 13) · Power BI sobre CSV, sin motor (clases 15 a 27)
 **¿Preferís trabajar en tu máquina?** [SQLite local](recursos/entorno-local-sqlite.md) · [Oracle local](recursos/entorno-local-oracle.md) — los dos opcionales
 
 ---
@@ -67,6 +67,7 @@ proyecto-final/ enunciado y rúbrica
 | **24** | **22 sep** | **Diez números para la gerencia · mini proyecto autoguiado: el tablero completo desde un `.pbix` vacío** | **Power BI (CSV)** | [clase](clases/24-mini-proyecto-tablero/) |
 | **25** | **23 sep** | **Examen práctico · 90 minutos en un formulario: SQL sobre AgroDB y Power BI sobre los CSV de la 19, y cada opción incorrecta es una trampa del curso** | **SQLite + Power BI (CSV)** | [clase](clases/25-examen-practico/) |
 | **26** | **24 sep** | **Los kilos que llegaron en otro mes · relaciones inactivas y `USERELATIONSHIP`, y una fecha que el modelo tenía pero no usaba** | **Power BI (CSV)** | [clase](clases/26-relaciones-inactivas/) |
+| **27** | **25 sep** | **La fecha al revés · Power Query y la configuración regional, y un botón de «Quitar errores» que quitó filas** | **Power BI (CSV)** | [clase](clases/27-power-query-fechas/) |
 
 ---
 
@@ -104,6 +105,8 @@ Y en la 24 no hay tema nuevo: hay **un proyecto**, autoguiado, de hora y media a
 
 Y en la 26 `h_cosecha` llega con **dos fechas**: la del corte y la de la entrega, que es cuando finanzas cobra. Entre las mismas dos tablas puede haber varias relaciones pero solo una activa, así que la de `fecha_entrega` queda **punteada**. La medida obvia de «kilos entregados» —un `SUM`— sale **idéntica** a `[Kilos]`, **30 550**, porque el mes llega por la relación activa, la del corte, y el nombre de la medida no elige el camino. Con `USERELATIONSHIP` dice **21 050**: enero gana el cacao que se cortó en diciembre y abril pierde el maíz que se entregó en mayo. Y el atajo de activar la otra relación hace que el `SUM` funcione, pero mueve todo lo demás sin tocar una medida: la empresa baja de 125,00 % a **86,13 %**.
 
+Y en la 27 se abre por primera vez la puerta por donde entran los datos: **Power Query**. Desde mayo las fincas pesan en básculas digitales, y el sistema de las básculas exporta un CSV con las fechas en **mes/día/año**. En español, `05/07/2026` se lee **5 de julio**. Tres fechas no existen —no hay mes 14— y salen como `Error`; el botón obvio, **Quitar errores**, deja la columna **100 % válida** y se lleva **3 500 kg**. Las otras siete se leyeron con la misma regla: seis **al revés** sin quejarse, y una bien por casualidad. Mayo a agosto dice **10 000** en vez de **16 700**, El Guayabo sale en **17,75 %** de su meta, y un cacao del 2 de julio aterriza el **7 de febrero** y mueve el número de control de enero–abril a **30 950**. El arreglo es escribir la regla **en el paso**: **Usar configuración regional → Inglés (Estados Unidos)**, y todo regresa a **16 700** y **30 550**.
+
 > **Nota de idioma:** el material de la clase 13 en adelante está redactado en español de México. Las clases 1 a 12 conservan la redacción original.
 
 ---
@@ -136,6 +139,7 @@ Si hay una sola cosa que llevarse de las veintiséis clases, es esta:
 | 23 | un semáforo que pintó de rojo a una finca al 142 % de su meta, porque «Porcentaje» comparaba contra el rango, y un KPI que enseñó abril como si fuera el año | nada — **los números estaban bien: lo que mentía era el color** |
 | 24 | ninguna trampa nueva: un tablero armado desde cero, con las de las clases 14 a 23 esperándolo en el mismo lienzo | nada — **por eso el checklist son diez números, no diez palomitas** |
 | 26 | una columna de «kilos entregados» idéntica a la de cosechados, porque la relación con la fecha de entrega estaba dibujada pero inactiva | nada — **la relación estaba; la medida nunca la pidió** |
+| 27 | un archivo de mayo a agosto que, con los errores quitados, dejó la columna 100 % válida, seis fechas al revés y un cacao de julio en febrero | nada — **los tres `Error` eran el único aviso, y el botón los borró** |
 
 ---
 
