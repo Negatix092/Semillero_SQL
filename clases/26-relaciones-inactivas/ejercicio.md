@@ -230,6 +230,7 @@ Formato: **Número decimal** con **dos decimales**.
 | `[Kilos entregados]` sigue igual a `[Kilos]` en D2 | la medida quedó con el `SUM` de la parte C | revisa la fórmula en la barra |
 | Power BI creó relaciones solo | la detección automática quedó prendida | bórralas y dibuja las cinco |
 | `[Dias a la entrega]` sale entero | formato sin decimales | **Herramientas de medición → Formato → Número decimal**, dos decimales |
+| La tabla dice **«Suma de** Dias a la entrega**»**, con 21,20 / 31,80 / 10,60 / 31,80 | la creaste con **Nueva columna**, no con **Nueva medida**: cada fila vale 10,60, el promedio de las 25 cosechas | elimínala y créala con **Nueva medida** |
 | Los decimales o los miles salen distintos | configuración regional de tu Windows | **no es un error**, anótalo y sigue |
 
 > ### La regla de los 20 minutos sigue vigente
